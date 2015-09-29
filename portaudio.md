@@ -57,16 +57,16 @@ Get info about a host API. Possible APIs are: 'pa', 'directsound', 'mme',
 
 ### `pa.open(['*i'|'*o'|i|t]) -> stream`
 
-Open a stream. The arg can be '*i' (default input device), '*o' (default
+Open a stream. The arg can be `'*i'` (default input device), `'*o'` (default
 output device), a valid device index (in which case it will be used for
 input and/or output depending on its number of input and output channels),
 or a table with the fields:
 
 * `input`, `output` - input and/or output devices; can be either:
-	* '*i' - default input device
-	* '*o' - default output device
+	* `'*i'` - default input device
+	* `'*o'` - default output device
 	* a table with the fields:
-		* `device` - the device index ('*i' or '*o')
+		* `device` - the device index (`'*i'` or `'*o'`)
 		* `channels` - number of channels (2)
 		* `format` - sample format: 'float32', 'int32', 'int24', 'int16',
 		'int8', 'uint8', 'custom' ('int16')
