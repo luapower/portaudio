@@ -1,3 +1,9 @@
+---
+tagline: portable audio I/O
+---
+
+A binding of [PortAudio](http://portaudio.com/), the audio I/O library
+which powers Audacity.
 
 ------------------------------------------ ------------------------------------------
 `pa.hostapis() -> iter() -> i, info`       iterate host APIs
