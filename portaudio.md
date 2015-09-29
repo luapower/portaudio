@@ -6,6 +6,11 @@ A binding of [PortAudio](http://portaudio.com/), the audio I/O library
 which powers Audacity. The included binaries only support the 'directsound'
 host APIs.
 
+<warn>Work in progress. This whole thing might be a dead end
+since not all PortAudio backends support the blocking API and the
+callback is called from a different thread, which means we have to
+bring in [thread], which might be overkill...</warn>
+
 ## API
 
 ------------------------------------------ ------------------------------------------
@@ -71,10 +76,10 @@ or a table with the fields:
 	* `input`, `output` - the buffer: `void*`
 	* `n` - the number of frames to be read/written
 	* `timeinfo` - a C struct with the fields:
-		`input_buffer_adc_time` - TODO
-		`current_time` - TODO
-		`output_buffer_dac_time` - TODO
-	* `status` -
+		* `input_buffer_adc_time` - TODO
+		* `current_time` - TODO
+		* `output_buffer_dac_time` - TODO
+	* `status` - TODO
 	* `ret` - nil|nothing|'continue', false|'abort', true|'complete'
 * `finished` - (optiona) callback `f()` called when the stream has finished
 * `frames` - how many frames to pass to the callback buffer (0 i.e. variable)
